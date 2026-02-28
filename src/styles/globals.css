@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jarvis-bg: #0a0a0f;
+  --color-jarvis-surface: #12121a;
+  --color-jarvis-border: #1e1e2e;
+  --color-jarvis-accent: #00b4d8;
+  --color-jarvis-accent-dim: #0077b6;
+  --color-jarvis-text: #e0e0e8;
+  --color-jarvis-text-dim: #6b6b80;
+  --color-jarvis-user: #1a1a2e;
+  --color-jarvis-ai: #0d1117;
+  --color-jarvis-glow: rgba(0, 180, 216, 0.15);
+}
+
+body {
+  background-color: var(--color-jarvis-bg);
+  color: var(--color-jarvis-text);
+  font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-jarvis-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-jarvis-text-dim);
+}
+
+/* Glow keyframes */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Jarvis Visual Panel — CSS overlays                                 */
+/* ------------------------------------------------------------------ */
+
+.jarvis-visual-panel {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 180, 216, 0.03) 0%,
+    #0a0a0f 70%
+  );
+}
+
+/* Scanlines */
+.jarvis-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 180, 216, 0.015) 3px,
+    rgba(0, 180, 216, 0.015) 4px
+  );
+}
+
+/* Holographic grid */
+.jarvis-grid {
+  background-image:
+    linear-gradient(rgba(0, 180, 216, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 216, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Edge glow */
+.jarvis-edge-glow {
+  box-shadow:
+    inset 1px 0 30px rgba(0, 180, 216, 0.04),
+    inset -1px 0 30px rgba(0, 180, 216, 0.02);
+}
