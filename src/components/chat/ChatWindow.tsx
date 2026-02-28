@@ -223,7 +223,7 @@ export function ChatWindow({ visualControl, onSceneCommand }: ChatWindowProps) {
       </div>
 
       {/* Input */}
-      <div className="shrink-0 px-4 pb-6">
+      <div className="shrink-0 px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
         <InputBar onSend={handleSend} disabled={isThinking} />
       </div>
     </div>
